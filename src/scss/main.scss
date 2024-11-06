@@ -65,6 +65,16 @@ video {
   border: 5px solid var(--white);
   border-bottom-color: var(--red);
   border-radius: 50%;
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
 }
 
 .button {
@@ -76,6 +86,16 @@ video {
   border-radius: 5px;
   color: var(--white);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: button 1s alternate infinite;
+}
+
+@keyframes button {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 
 .background {
@@ -83,6 +103,16 @@ video {
   height: 200px;
   background-image: linear-gradient(45deg, var(--yellow), var(--light-blue));
   background-size: 200% 200%;
+  animation: backgrounda 5s infinite alternate;
+}
+
+@keyframes backgrounda {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
 }
 
 .submit {
@@ -98,6 +128,18 @@ video {
 
 .submit-plane {
   width: 26px;
+  animation: submit 4s ease-out infinite;
+}
+
+@keyframes submit {
+  from {
+    transform: translateX(0px) translateY(0px);
+    opacity: 100%;
+  }
+  to {
+    transform: translateX(50px) translateY(-50px);
+    opacity: 0%;
+  }
 }
 
 .pong {
@@ -114,10 +156,53 @@ video {
   width: 10px;
   height: 10px;
   background: var(--black);
+  animation: ball 5s linear infinite alternate;
+}
+
+@keyframes ball {
+  from {
+    transform: translateX(-225px) translateY(-100px);
+  }
+  to {
+    transform: translateX(225px) translateY(100px);
+  }
 }
 
 .pong-paddle {
   width: 10px;
   height: 80px;
   background: var(--black);
+  animation: paddle2 10s -5.5s linear infinite;
+}
+
+.pong-paddle:nth-child(1) {
+  animation: paddle 10s -0.5s linear infinite;
+}
+
+@keyframes paddle {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  75% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes paddle2 {
+  0% {
+    transform: translateY(100px);
+  }
+
+  75% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(100px);
+  }
 }
